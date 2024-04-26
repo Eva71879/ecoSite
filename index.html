@@ -2,37 +2,317 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image" href="assets/images/flavicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Стилизация и отправка формы</title>
+    <title>ХерсонЭко</title>
+    <link rel="stylesheet" href="assets/style/styles.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <div class="form">
-        <form action="#" id="form" class="form__body">
-          <h1 class="form__title">Отправка данных на почту</h1>
-          <div class="form__item">
-            <label for="formName" class="form__label">Имя*</label>
-            <input
-              type="text"
-              id="formName"
-              name="name"
-              class="form__input _req"
-            />
-          </div>
-          <div class="form__item">
-            <label for="formEmail" class="form__label">e-mail*</label>
-            <input
-              type="email"
-              id="formEmail"
-              name="email"
-              class="form__input _req _email"
-            />
-          </div>
-          <button class="form__button">Отправить</button>
-        </form>
+    <header class="header">
+      <div class="container">
+        <div class="header__logo logo">Херсон&nbsp<span>экология</span></div>
+        <p class="title">
+          Экологическая документация для ИП и<br />
+          предприятий для новых территорий
+        </p>
+        <div class="callRequest">
+          <p>+7 978 261 82 64</p>
+          <a href="#" class="open-modal-btn">Заказать звонок</a>
+        </div>
       </div>
-    </div>
-    <script src="script.js"></script>
+      <!-- <div class="modal" id="my-modal">
+        <div class="modal__box">
+          <button class="modal__close-btn" id="close-my-modal-btn">
+            <svg
+              width="35px"
+              height="35px"
+              viewBox="0 0 23 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 17L16.8995 7.10051"
+                stroke="#9DC11A"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="#333333"
+              />
+              <path
+                d="M7 7.00001L16.8995 16.8995"
+                stroke="#9DC11A"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="#333333"
+              />
+            </svg>
+          </button>
+          <p class="modal__title">Заказать звонок</p>
+          <div class="form__item">
+            <label for="formName" class="form__label"></label>
+            <input
+              id="formName"
+              type="text"
+              name="name"
+              class="form__input _req modal__input"
+              placeholder="Ваше имя*"
+              required
+            />
+          </div>
+          <div class="form__item">
+            <label for="formPhone" class="form__label"></label>
+            <input
+              id="formPhone"
+              type="phone"
+              name="phone"
+              class="form__input _req _phone modal__input"
+              placeholder="Телефон*"
+              required
+            />
+          </div>
+          <button type="submit" class="form__button button modal__button">
+            Позвоните мне!
+          </button>
+        </div>
+      </div> -->
+    </header>
+    <main>
+      <section class="main-content">
+        <div class="container">
+          <h1 class="main-content main-content_title">
+            Разработка паспортов отходов<br />
+            быстро и недорого<br />
+            в Херсоне, Запорожье, ДНР, ЛНР
+          </h1>
+          <button
+            class="main-content button main-content_button main-action-button"
+          >
+            Заказать паспорт
+          </button>
+        </div>
+      </section>
+      <section class="workWithUs">
+        <div class="container">
+          <img src="assets/images/secondSection-image.jpg" alt="notebook" />
+          <div class="workWithUs__aside">
+            <h2 class="workWithUs__aside workWithUs__aside_title">
+              Работать с нами<br />
+              очень просто
+            </h2>
+            <div class="workWithUs__aside workWithUs__aside_main">
+              <ul>
+                <li>
+                  Пришлите реквизиты нам на почту с указанием вида деятельности
+                </li>
+                <li>
+                  Мы составим необходимый перечень отходов для паспортизации
+                </li>
+                <li>Заключаем договор на разработку паспортов</li>
+                <li>Получаете готовые паспорта отходов через 20 дней в офис</li>
+              </ul>
+            </div>
+            <p class="workWithUs__aside workWithUs__aside_footer">
+              Всего 4 шага, и Вы получите готовые документы, не выходя из офиса
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="trustUs">
+        <div class="container">
+          <h2>Почему нам доверяют?</h2>
+          <div class="trustUs trustUs__benefits">
+            <div class="trustUs__benefits trustUs__benefits_item">
+              <div class="item__header">
+                <img src="assets/images/thumb-up.png" alt="thumbUp" />
+                <p>Аккредитованная лаборатория</p>
+              </div>
+              <p class="item__footer">
+                Наша лаборатория имеет аттестат аккредитации, который позволяет
+                нам отбирать пробы и проводить все виды исследований
+              </p>
+            </div>
+            <div class="trustUs__benefits trustUs__benefits_item">
+              <div class="item__header">
+                <img src="assets/images/ruble.png" alt="ruble" />
+                <p>Цена на 30% ниже конкурентов</p>
+              </div>
+              <p class="item__footer">
+                Мы предлагаем фиксированные и очень выгодные цены, чтобы сделать
+                процесс разработки доступным для каждого бизнеса
+              </p>
+            </div>
+            <div class="trustUs__benefits trustUs__benefits_item">
+              <div class="item__header">
+                <img
+                  src="assets/images/fast-delivery.png"
+                  alt="fast-delivery"
+                />
+                <p>Бесплатно доставим документы</p>
+              </div>
+              <p class="item__footer">
+                Курьер привезет документы прямо в офис (Херсон, Запорожье,
+                Донецкая НР, Луганская НР, Крым и тд)
+              </p>
+            </div>
+            <div class="trustUs__benefits trustUs__benefits_item">
+              <div class="item__header">
+                <img src="assets/images/check-icon.png" alt="fast-delivery" />
+                <p>Законодательное соответствие</p>
+              </div>
+              <p class="item__footer">
+                Мы гарантируем, что разрабатаваемые нами документы соответствуют
+                действующему законодательству РФ
+              </p>
+            </div>
+            <div class="trustUs__benefits trustUs__benefits_item">
+              <div class="item__header">
+                <img src="assets/images/man.png" alt="fast-delivery" />
+                <p>Квалифицированные сотрудники</p>
+              </div>
+              <p class="item__footer">
+                Наша команда состоит из опытных экологов, готовых отвечать о
+                ходе работ в любое время
+              </p>
+            </div>
+            <div class="trustUs__benefits trustUs__benefits_item">
+              <div class="item__header">
+                <img src="assets/images/key.png" alt="fast-delivery" />
+                <p>Работы "под ключ"</p>
+              </div>
+              <p class="item__footer">
+                Вы минимизируете свое участие в процессе подготовки документов.
+                Мы все сделаем за Вас
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="request" id="request">
+        <div class="container">
+          <h3>
+            Оставьте заявку<br /><span
+              >на бесплатную консультацию эколога:</span
+            >
+          </h3>
+          <div class="request__form">
+            <form action="#" id="form" class="form__body">
+              <div>
+                <div class="form__item">
+                  <label for="formName" class="form__label">
+                    <input
+                      id="formName"
+                      type="text"
+                      name="name"
+                      class="form__input _req form__input_mainForm"
+                      placeholder="Ваше имя*"
+                      pattern="^[a-zA-Zа-яА-ЯЁё\s\-]+$"
+                      data-error-message="Разрешены символы латиницы,
+                    кириллицы, знаки дефиса и пробелы."
+                      aria-describedby="name-error"
+                      required
+                    />
+                  </label>
+                  <span
+                    class="form__error input__name-error"
+                    id="name-error"
+                    aria-live="polite"
+                  >
+                  </span>
+                </div>
+                <div class="form__item">
+                  <label for="formPhone" class="form__label">
+                    <input
+                      id="formPhone"
+                      type="tel"
+                      name="phone"
+                      class="form__input _req form__input_mainForm _phone"
+                      placeholder="Телефон*"
+                      required
+                    />
+                  </label>
+                </div>
+                <div class="form__item">
+                  <label for="formEmail" class="form__label"></label>
+                  <input
+                    id="formEmail"
+                    type="email"
+                    name="email"
+                    class="form__input _req form__input_mainForm _email"
+                    placeholder="E-mail*"
+                    required
+                  />
+                </div>
+              </div>
+              <div>
+                <button
+                  type="submit"
+                  class="form__button form__button_mainForm"
+                >
+                  Получить консультацию <span>></span>
+                </button>
+              </div>
+              <div id="message"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="weAre">
+        <div class="container">
+          <h2>Кто мы?</h2>
+          <div class="weAre__content">
+            <img src="assets/images/woman.png" alt="woman" />
+            <div class="weAre__content weAre__content_text">
+              <p>
+                Привет! Я - Юля, создатель компании по разработке экологической
+                документации в Крыму и на новых территориях.
+              </p>
+              <ul>
+                <li>
+                  Я горжусь своей ответсвенностью и стремлением выполнять
+                  поставленные задачи в срок
+                </li>
+                <li>
+                  Мой опыт в сфере экологии и разработки позволяет мне точно
+                  понимать Ваши потребности
+                </li>
+                <li>Я лично слежу за каждым проектом своих сотрудников</li>
+                <li>
+                  Я хочу, чтобы каждый клиент чувтвовал уверенность в выборе
+                  нашей компании
+                </li>
+                <li>
+                  Мы не просто разрабатываем документы, мы создаем инструменты
+                  для Вашего успешного бизнеса и помогаем Вам решить проблемы в
+                  экологии
+                </li>
+                <li>
+                  Доверьтесь нашему опыту и индивидуальному подходу и мы вместе
+                  создадим устойчивое будущее для Вашего бизнеса!
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="questions">
+        <div class="container">
+          <h2>Остались вопросы?</h2>
+          <h3>Напишите нам, чтобы получить бесплатную консультацию</h3>
+          <button class="button questions__button main-action-button">
+            Получить консультацию
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="logo footer__logo">Херсон&nbsp<span>экология</span></div>
+        <p class="footer__email">herson.ecology@gmail.com</p>
+        <p class="footer__address">
+          Адрес: Республика Крым, г. Симферополь, ул. Лермонтова, д.14
+        </p>
+      </div>
+    </footer>
+    <script src="assets/scripts/linksModal.js"></script>
+    <script src="assets/scripts/sendForm.js"></script>
   </body>
 </html>
