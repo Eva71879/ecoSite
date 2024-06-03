@@ -5,22 +5,21 @@
     <link rel="icon" type="image" href="assets/images/flavicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ХерсонЭко</title>
-    <link rel="stylesheet" href="assets/style/styles.css" />
+    <link rel="stylesheet" href="assets/style/style.css" />
   </head>
   <body>
     <header class="header">
       <div class="container">
         <div class="header__logo logo">Херсон&nbsp<span>экология</span></div>
         <p class="title">
-          Экологическая документация для ИП и<br />
-          предприятий для новых территорий
+          Экологическая документация для ИП </br> и предприятий для новых территорий
         </p>
         <div class="callRequest">
           <p>+7 978 261 82 64</p>
           <a href="#" class="open-modal-btn">Заказать звонок</a>
         </div>
       </div>
-      <!-- <div class="modal" id="my-modal">
+      <div class="modal" id="my-modal">
         <div class="modal__box">
           <button class="modal__close-btn" id="close-my-modal-btn">
             <svg
@@ -47,33 +46,39 @@
             </svg>
           </button>
           <p class="modal__title">Заказать звонок</p>
-          <div class="form__item">
-            <label for="formName" class="form__label"></label>
-            <input
-              id="formName"
-              type="text"
-              name="name"
-              class="form__input _req modal__input"
-              placeholder="Ваше имя*"
-              required
-            />
-          </div>
-          <div class="form__item">
-            <label for="formPhone" class="form__label"></label>
-            <input
-              id="formPhone"
-              type="phone"
-              name="phone"
-              class="form__input _req _phone modal__input"
-              placeholder="Телефон*"
-              required
-            />
-          </div>
-          <button type="submit" class="form__button button modal__button">
-            Позвоните мне!
-          </button>
+          <form action="#" id="formModal" class="modalForm">
+            <div class="form__item">
+              <label for="formName" class="form__label"></label>
+              <input
+                id="formName"
+                type="text"
+                name="name"
+                class="form__input _reqModal modal__input"
+                placeholder="Ваше имя*"
+                pattern="[A-Za-zА-Яа-яЁё]+"
+                title="Пожалуйста, введите только латинские или русские буквы"
+                required
+              />
+            </div>
+            <div class="form__item">
+              <label for="formPhone" class="form__label"></label>
+              <input
+                id="formPhone"
+                type="tel"
+                name="phone"
+                class="form__input _reqModal _phone modal__input"
+                placeholder="Телефон*"
+                title="Введите минимум 8 цифр без пробелов и других символов"
+                required
+              />
+            </div>
+            <button type="submit" class="form__button button modal__button">
+              Позвоните мне!
+            </button>
+            <div id="messageModal"></div>
+          </form>
         </div>
-      </div> -->
+      </div>
     </header>
     <main>
       <section class="main-content">
@@ -95,8 +100,7 @@
           <img src="assets/images/secondSection-image.jpg" alt="notebook" />
           <div class="workWithUs__aside">
             <h2 class="workWithUs__aside workWithUs__aside_title">
-              Работать с нами<br />
-              очень просто
+              Работать с нами очень просто
             </h2>
             <div class="workWithUs__aside workWithUs__aside_main">
               <ul>
@@ -197,38 +201,30 @@
             <form action="#" id="form" class="form__body">
               <div>
                 <div class="form__item">
-                  <label for="formName" class="form__label">
-                    <input
-                      id="formName"
-                      type="text"
-                      name="name"
-                      class="form__input _req form__input_mainForm"
-                      placeholder="Ваше имя*"
-                      pattern="^[a-zA-Zа-яА-ЯЁё\s\-]+$"
-                      data-error-message="Разрешены символы латиницы,
-                    кириллицы, знаки дефиса и пробелы."
-                      aria-describedby="name-error"
-                      required
-                    />
-                  </label>
-                  <span
-                    class="form__error input__name-error"
-                    id="name-error"
-                    aria-live="polite"
-                  >
-                  </span>
+                  <label for="formName" class="form__label"> </label>
+                  <input
+                    id="formName"
+                    type="text"
+                    name="name"
+                    class="form__input _req form__input_mainForm"
+                    placeholder="Ваше имя*"
+                    pattern="[A-Za-zА-Яа-яЁё]+"
+                    title="Пожалуйста, введите только латинские или русские буквы"
+                    required
+                  />
                 </div>
                 <div class="form__item">
-                  <label for="formPhone" class="form__label">
-                    <input
-                      id="formPhone"
-                      type="tel"
-                      name="phone"
-                      class="form__input _req form__input_mainForm _phone"
-                      placeholder="Телефон*"
-                      required
-                    />
-                  </label>
+                  <label for="formPhone" class="form__label"></label>
+                  <input
+                    id="formPhone"
+                    type="tel"
+                    name="phone"
+                    class="form__input _req form__input_mainForm _phone"
+                    placeholder="Телефон*"
+                    pattern="[0-9]{10,}"
+                    title="Введите минимум 10 цифр без пробелов и других символов"
+                    required
+                  />
                 </div>
                 <div class="form__item">
                   <label for="formEmail" class="form__label"></label>
@@ -238,7 +234,8 @@
                     name="email"
                     class="form__input _req form__input_mainForm _email"
                     placeholder="E-mail*"
-                    required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                    title="Введите корректный адрес электронной почты"
                   />
                 </div>
               </div>
@@ -249,8 +246,8 @@
                 >
                   Получить консультацию <span>></span>
                 </button>
+                <div id="message"></div>
               </div>
-              <div id="message"></div>
             </form>
           </div>
         </div>
@@ -267,7 +264,7 @@
               </p>
               <ul>
                 <li>
-                  Я горжусь своей ответсвенностью и стремлением выполнять
+                  Я горжусь своей ответственностью и стремлением выполнять
                   поставленные задачи в срок
                 </li>
                 <li>
@@ -276,7 +273,7 @@
                 </li>
                 <li>Я лично слежу за каждым проектом своих сотрудников</li>
                 <li>
-                  Я хочу, чтобы каждый клиент чувтвовал уверенность в выборе
+                  Я хочу, чтобы каждый клиент чувствовал уверенность в выборе
                   нашей компании
                 </li>
                 <li>
@@ -308,11 +305,12 @@
         <div class="logo footer__logo">Херсон&nbsp<span>экология</span></div>
         <p class="footer__email">herson.ecology@gmail.com</p>
         <p class="footer__address">
-          Адрес: Республика Крым, г. Симферополь, ул. Лермонтова, д.14
+          Адрес: Республика Крым, г.&nbsp;Симферополь, ул.&nbsp;Лермонтова, д.&nbsp;14
         </p>
       </div>
     </footer>
     <script src="assets/scripts/linksModal.js"></script>
-    <script src="assets/scripts/sendForm.js"></script>
+    <script src="assets/scripts/form.js"></script>
+    <script src="assets/scripts/formModal.js"></script>
   </body>
 </html>

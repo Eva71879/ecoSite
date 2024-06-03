@@ -1,6 +1,16 @@
+@import "./scss/abstracts/variables.scss";
+@import "./modal.scss";
+
+// $mobile: 375px;
+// $tablet: 768px;
+// $big-tablet: 1025px;
+// $desktop: 1280px;
+// $large-desktop: 1560px;
+
 * {
     margin: 0;
     padding: 0;
+    outline: 1px solid black;
 }
 
 @font-face {
@@ -20,9 +30,9 @@
 
 body {
     font-family: 'Roboto 400', sans-serif;
-    color: #343434;
+    color: $color-dark-gray;
     line-height: 1.5;
-    max-width: 2000px;
+    max-width: 1560px;
     margin: 0 auto;
 }
 
@@ -33,14 +43,14 @@ body {
 }
 
 .logo {
-    font-size: clamp (15px, 3vw, 28px);
+    font-size: clamp(20px, 3vw, 28px);
     vertical-align: baseline;
     text-transform: uppercase;
-    margin-right: 30px;
 
     & span {
-        background-color: #44a047;
-        color: #FFFFFF;
+        font-size: clamp(20px, 3vw, 28px);
+        background-color: $color-light-green;
+        color: $color-white;
         border-radius: 7px;
         margin-left: -5px;
     }
@@ -48,7 +58,7 @@ body {
 
 button {
     cursor: pointer;
-    color: #FFFFFF;
+    color: $color-white;
     border: none;
     text-align: center;
 }
@@ -56,24 +66,24 @@ button {
 .header .container {
     display: flex;
     align-items: flex-start;
-    padding: 25px 10px;
+    justify-content: space-evenly;
+    padding: 25px;
     font-family: 'Roboto 300', sans-serif;
 
-    @media (max-width: 500px) {
+    @media (max-width: 800px) {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    
+        gap: 10px;
     }
 }
 
 .title {
-    font-size: clamp(12px, 5vw, 18px);
-    width: 100%;
+    font-size: clamp(14px, 5vw, 18px);
+    max-width: 350px;
 }
 
 .callRequest {
-    max-width: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -86,123 +96,18 @@ button {
         justify-content: center;
         align-items: center;
         text-align: right;
-        font-size: clamp(15px, 2vw, 24px);
+        font-size: clamp(14px, 2.5vw, 24px);
         margin-bottom: 5px;
     }
 
     & a {
         cursor: pointer;
-        color: #44a047;
+        color: $color-light-green;
         font-size: 14px;
     }
 
     & a:hover {
-        color: #6dd771;
-    }
-}
-
-.modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 99998;
-    background-color: rgba(0, 0, 0, .3);
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    overflow-y: auto;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity .4s, visibility .4s;
-}
-
-.modal__box {
-    position: relative;
-    max-width: 414px;
-    padding: 45px;
-    z-index: 3;
-    background-color: #ECEEEB;
-    border-radius: 0.45rem;
-    margin: 30px 15px;
-    transform: scale(0);
-    transition: transform .8s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal__close-btn {
-    position: absolute;
-    top: 3px;
-    right: 3px;
-    border: none;
-    background-color: transparent;
-    padding: 5px;
-    cursor: pointer;
-}
-
-.modal__close-btn svg path {
-    transition: fill .4s;
-    stroke-width: 1.5px;
-}
-
-.modal__close-btn:hover svg:hover path {
-    stroke: #8cac18;
-}
-
-.modal.open {
-    visibility: visible;
-    opacity: 1;
-}
-
-.modal.open .modal__box {
-    transform: scale(1);
-}
-
-.modal__title {
-    color: #343434;
-    font-size: 34px;
-    font-family: 'Roboto 300', sans-serif;
-    padding-bottom: 20px;
-}
-
-.modal__input {
-    width: 294px;
-    height: 53px;
-    background-color: #FFFFFF;
-    color: #343434;
-    border: none;
-    border-radius: 5px;
-    padding-left: 20px;
-    font-size: 20px;
-    font-family: 'Roboto 100', sans-serif;
-
-    &::placeholder {
-        color: #343434;
-        caret-color: #343434;
-        caret-shape: inherit;    
-    }
-
-    &:focus {
-        outline: none;
-        border: none;
-        box-shadow: none;
-    }
-}
-
-.modal__button {
-    background-color: #9DC11A;
-    width: 315px;
-    border-radius: 5px;
-    padding: 23px;
-    text-transform: uppercase;
-    font-size: 20px;
-
-    &:hover {
-        background-color: #b3dc1e;
+        color: $color-green-hover;
     }
 }
 
@@ -210,7 +115,7 @@ button {
     background-image: url(../images/main-image.jpg);
     background-size: cover;
     max-height: 637px;
-    padding: 150px;
+    padding: 160px 0px 50px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -231,45 +136,54 @@ button {
     padding: 0 11.8px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    color: #FFFFFF;
+    color: $color-white;
     font-size: 22px;
     box-sizing: border-box;
     line-height: 63px;
-    background-color: #9cc11a;
+    background-color: $color-lime;
     border-radius: 7px;
 }
 
 .workWithUs .container {
     display: flex;
-    padding: 20px;
+    justify-content: space-between;
+
+    @media (max-width: 640px) {
+        justify-content: center;
+    }
 }
 
 .workWithUs img {
-    width: 317px;
-    height: 475px;
-    margin-right: 140px;
+    max-width: 317px;
+    padding: 20px 20px 0 0;
+    @media (max-width: 640px) {
+        display: none;
+    }
 }
 
 .workWithUs__aside {
-    max-width: 500px;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    @media (max-width: 510px) {
+        padding: 10px;
+        margin-top: 0;
+    }
 }
 
 .workWithUs__aside_title {
     line-height: 38px;
-    font-size: clamp(25px, 5vw, 38px);
+    font-size: clamp(25px, 2.5vw, 38px);
     font-family: 'Roboto 300', sans-serif;
     font-weight: 300;
-    margin-bottom: 40px;
+    margin-bottom: clamp(7px, 2vw, 20px);
 }
 
 .workWithUs__aside_main > ul {
     list-style-type: none;
     font-family: 'Roboto 300', sans-serif;
-    font-size: 16px;
-    width: 83.5%;
+    font-size: clamp(14px, 2vw, 16px);
+    max-width: 83.5%;
 
     & li {
         position: relative;
@@ -286,9 +200,9 @@ button {
         transform: translateY(-50%);
         width: 15px;
         height: 15px;
-        border: 2px solid #44a047;
+        border: 2px solid $color-light-green;
         border-radius: 50%;
-        background-color: white;
+        background-color: $color-white;
     }
 
     & li:nth-child(2),
@@ -301,25 +215,24 @@ button {
     line-height: 27px;
     font-size: 24px;
     font-family: 'Roboto 300', sans-serif;
-    width: 450px;
+    max-width: 450px;
 }
 
 .trustUs .container {
-    margin-bottom: 30px;
+    margin-bottom: clamp(15px, 2vw, 30px);
 }
 
 .trustUs h2 {
     text-align: center;
-    color: #2c5871;
-    font-size: 50px;
+    color: $color-dark-blue;
+    font-size: clamp(30px, 2vw, 50px);
     font-family: 'Roboto 100', sans-serif;
     font-weight: 100;
     margin: 25px 0 25px 0;
 }
 
 .trustUs__benefits img {
-    width: 75px;
-    height: 75px;
+    max-width: 75px;
     margin-right: 10px;
 }
 
@@ -327,13 +240,22 @@ button {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
+
+    @media (max-width: 878px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 633px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .trustUs__benefits_item {
     display: flex;
     flex-direction: column;
+    padding: 0 5px 0 5px;
     margin-bottom: 10px;
-    color: #0f303f;
+    color: $color-dark-cyan;
 }
 
 .item__header {
@@ -343,12 +265,14 @@ button {
 
     & p {
         line-height: 1.16;
-        font-size: 26px;
+        font-size: clamp(20px, 3vw, 26px);
     }
 }
 
-.trustUs__benefits_item:nth-child(3) .item__header p {
-    font-size: 20px;
+@media (min-width: 878px) {
+    .trustUs__benefits_item:nth-child(1) .item__header p {
+        height: 90px;
+    }
 }
 
 .trustUs__benefits_item:nth-child(5) .item__header p,
@@ -359,28 +283,29 @@ button {
 .item__footer {
     line-height: 1.43;
     font-size: 18px;
-    margin-left: 10px;
 }
 
-.request {
+.request .container {
     background-image: url(../images/underwater.jpg);
     background-size: cover;
     position: relative;
+
+
 }
 
-.request::before {
+.request .container::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(7, 78, 88, 0.8);
+    background-color: $color-overlay;
     z-index: 1;
 }
 
 .request h3 {
-    color: #FFFFFF;
+    color: $color-white;
     position: relative;
     z-index: 2;
     text-align: center;
@@ -390,7 +315,7 @@ button {
     padding: 20px 0 20px 0;
 
     & span {
-        font-size: 30px;
+        font-size: clamp(17px, 5vw, 30px);
     }
 }
 
@@ -404,15 +329,19 @@ button {
     display: flex;
     align-items: center;
     gap: 50px;
-    margin-bottom: 40px;
-    color: #FFFFFF;
+    margin: 0 5px 40px 5px;
+    color: $color-white;
+
+    @media (max-width: 880px) {
+        flex-direction: column;
+        gap: 25px;
+    }
 }
 
 .modalForm {
     display: flex;
     flex-direction: column;
     gap: 30px;
-
 }
 
 .form__body::after {
@@ -420,7 +349,7 @@ button {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     background:  transparent url('../images/loading.gif') center / 9rem no-repeat;
     opacity: 0;
@@ -436,14 +365,14 @@ button {
 ._error {
     box-shadow: 0 0.3rem 0.9rem rgba(78, 55, 55, 0.37),
         inset 0 0.3rem 1.9rem rgba(255, 6, 6, 0.503);
-        transition: 1s ease 0s;
+    transition: 1s ease 0s;
 }
 
 #message, #messageModal {
     font-size: 0.9em;
     text-align: center;
     font-weight: 800;
-    color: rgb(253, 83, 83);
+    color: $color-error-red;
     padding-top: 5px;
 }
 
@@ -455,18 +384,21 @@ button {
     font-family: Arial, Helvetica, sans-serif;
     z-index: 2;
     color: white;
-
 }
 
 .form__input_mainForm {
     border: 2px solid #1695a4;
-    width: 438px;
-    height: 51px;
+    max-width: 438px;
+    max-height: 51px;
     margin-bottom: 10px;
     font-size: 17px;
-    caret-color: #FFFFFF;
+    caret-color: $color-white;
     padding-left: 48px;
     color: white;
+
+    @media (max-width: 520px) {
+        max-width: 290px;
+    }
 }
 
 .form__input_mainForm::placeholder {
@@ -482,18 +414,18 @@ button {
 }
 
 .form__button_mainForm {
-    border: 2px solid #000000;
-    color: #FFFFFF;
+    border: 2px solid $color-black;
+    color: $color-white;
     font-size: 20px;
     text-transform: uppercase;
-    width: 338px;
+    max-width: 338px;
     height: 51px;
     text-align: center;
     cursor: pointer;
 
     & span {
         font-size: 25px;
-    }    
+    }
 }
 
 .form__button_mainForm:hover {
@@ -502,11 +434,9 @@ button {
     }
 }
 
-
 .weAre {
     background-color: #EEEEEE;
-    color: #0f313f;
-
+    color: $color-dark-cyan;
 }
 
 .weAre h2 {
@@ -517,13 +447,22 @@ button {
 }
 
 .weAre img {
-    width: 352px;
-    height: 352px;
-    margin-right: 50px;
+    max-width: 352px;
+    max-height: 352px;
 }
 
 .weAre__content {
+    outline: 2px solid pink;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: 548px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }   
 }
 
 .weAre__content_text {
@@ -532,18 +471,23 @@ button {
     font-size: 18px;
     font-family: 'Roboto 300', sans-serif;
     font-weight: 300;
+    padding: 0 10px 0 10px;
 
     ul {
         padding: 25px 0 0 20px;
         margin-bottom: 45px;
     }
+
+    p {
+        @media (max-width: 548px) {
+            text-align: center;            
+    }
+}
 }
 
 .questions {
     background-image: url(../images/grey-background.jpg);
     background-size: cover;
-    position: relative;
-    margin-bottom: -95px;
     position: relative;
 }
 
@@ -554,12 +498,11 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(49, 54, 54, 0.5);
+    background-color: $color-translucent-gray;
     z-index: 1;
 }
 
 .questions .container {
-    min-height: 580px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -568,7 +511,7 @@ button {
 .questions h2,
 .questions h3 {
     text-align: center;
-    color: #FFFFFF;
+    color: $color-white;
     line-height: 53px;
     font-family: 'Roboto 100', sans-serif;
     font-weight: 100;
@@ -577,58 +520,82 @@ button {
 
 .questions h2 {
     font-size: 50px;
-    padding: 100px 0 20px 0;
+    padding: 50px 0 20px 0;
 }
 
 .questions h3 {
     font-size: 30px;
-    padding-bottom: 50px;
+    padding-bottom: clamp(30px, 4vw, 50px);
 }
 
 .questions__button {
     z-index: 2;
-    background-color: #f99a1d;
-    height: 67px;
-    width: 420px;
+    background-color: $color-orange;
+    max-width: 420px;
     border-radius: 12px;
     font-size: 28px;
     font-family: 'Roboto 100', sans-serif;
     font-weight: 100;
     line-height: 67px;
+    padding: 10px;
+    margin-bottom: 30px;
 }
 
 .footer {
-    background-color: rgba(35, 46, 62, 0.85);
-    color: #ffffff;
+    background-image: url(../images/grey-background.jpg);
+    background-size: cover;
     position: relative;
-    z-index: 2;
+    background-color: $color-footer-bg;
+    color: $color-white;
+    position: relative;
+    // z-index: 2;
+}
+
+.footer::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-translucent-gray;
+    z-index: 1;
 }
 
 .footer .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
+    padding: 20px 5px;
     gap: 50px;
+    // z-index: 2;
+
+    @media (max-width: 630px) {
+        flex-direction: column;
+        gap: 5px;
+    }
 }
-
-
 
 .footer__logo {
     margin-right: 0;
+    z-index: 2;
 
     span {
         border-radius: 0;
-    }  
+    }
 }
 
-
 .footer__email {
+    z-index: 2;
     font-size: 18px;
 }
 
 .footer__address {
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
     font-family: 'Roboto 100', sans-serif;
     font-weight: 100;
+    z-index: 2;
+    @media (max-width: 940px) {
+        text-align: center;
+    }
 }
