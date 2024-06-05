@@ -1,3 +1,4 @@
+//плавный переход на секцию "Заказать звонок"
 const mainActionButton = [
   ...document.getElementsByClassName("main-action-button"),
 ];
@@ -7,6 +8,8 @@ mainActionButton.forEach((element) => {
     document.getElementById("request").scrollIntoView({ behavior: "smooth" });
   };
 });
+
+//открытие-закрытие модального окна по первой верхней ссылке в header "Заказать звонок"
 
 document
   .querySelector(".open-modal-btn")

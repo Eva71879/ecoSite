@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image" href="assets/images/flavicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ХерсонЭко</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     <link rel="stylesheet" href="assets/style/style.css" />
   </head>
   <body>
     <header class="header">
       <div class="container">
-        <div class="header__logo logo">Херсон&nbsp<span>экология</span></div>
+        <div class="header__logo logo">Херсон&nbsp;<span>экология</span></div>
         <p class="title">
-          Экологическая документация для ИП </br> и предприятий для новых территорий
+          Экологическая документация для ИП и&nbsp;предприятий для новых
+          территорий
         </p>
         <div class="callRequest">
-          <p>+7 978 261 82 64</p>
-          <a href="#" class="open-modal-btn">Заказать звонок</a>
+          <p>
+            <a href="tel:+79782618264" class="callRequest__phoneLink"
+              >+7 978 261 82 64</a
+            >
+          </p>
+          <a href="#" class="open-modal-btn callRequest__order"
+            >Заказать звонок</a
+          >
         </div>
       </div>
       <div class="modal" id="my-modal">
@@ -97,7 +104,7 @@
       </section>
       <section class="workWithUs">
         <div class="container">
-          <img src="assets/images/secondSection-image.jpg" alt="notebook" />
+          <img src="assets/images/second-section-image.jpg" alt="desk" />
           <div class="workWithUs__aside">
             <h2 class="workWithUs__aside workWithUs__aside_title">
               Работать с нами очень просто
@@ -123,66 +130,66 @@
       <section class="trustUs">
         <div class="container">
           <h2>Почему нам доверяют?</h2>
-          <div class="trustUs trustUs__benefits">
-            <div class="trustUs__benefits trustUs__benefits_item">
-              <div class="item__header">
+          <div class="trustUs__benefits">
+            <div class="trustUs__benefits-item">
+              <div class="trustUs__benefits-item-header">
                 <img src="assets/images/thumb-up.png" alt="thumbUp" />
                 <p>Аккредитованная лаборатория</p>
               </div>
-              <p class="item__footer">
+              <p class="trustUs__benefits-item-footer">
                 Наша лаборатория имеет аттестат аккредитации, который позволяет
                 нам отбирать пробы и проводить все виды исследований
               </p>
             </div>
-            <div class="trustUs__benefits trustUs__benefits_item">
-              <div class="item__header">
+            <div class="trustUs__benefits-item">
+              <div class="trustUs__benefits-item-header">
                 <img src="assets/images/ruble.png" alt="ruble" />
                 <p>Цена на 30% ниже конкурентов</p>
               </div>
-              <p class="item__footer">
+              <p class="trustUs__benefits-item-footer">
                 Мы предлагаем фиксированные и очень выгодные цены, чтобы сделать
                 процесс разработки доступным для каждого бизнеса
               </p>
             </div>
-            <div class="trustUs__benefits trustUs__benefits_item">
-              <div class="item__header">
+            <div class="trustUs__benefits-item">
+              <div class="trustUs__benefits-item-header">
                 <img
                   src="assets/images/fast-delivery.png"
                   alt="fast-delivery"
                 />
                 <p>Бесплатно доставим документы</p>
               </div>
-              <p class="item__footer">
+              <p class="trustUs__benefits-item-footer">
                 Курьер привезет документы прямо в офис (Херсон, Запорожье,
                 Донецкая НР, Луганская НР, Крым и тд)
               </p>
             </div>
-            <div class="trustUs__benefits trustUs__benefits_item">
-              <div class="item__header">
+            <div class="trustUs__benefits-item">
+              <div class="trustUs__benefits-item-header">
                 <img src="assets/images/check-icon.png" alt="fast-delivery" />
                 <p>Законодательное соответствие</p>
               </div>
-              <p class="item__footer">
+              <p class="trustUs__benefits-item-footer">
                 Мы гарантируем, что разрабатаваемые нами документы соответствуют
                 действующему законодательству РФ
               </p>
             </div>
-            <div class="trustUs__benefits trustUs__benefits_item">
-              <div class="item__header">
+            <div class="trustUs__benefits-item">
+              <div class="trustUs__benefits-item-header">
                 <img src="assets/images/man.png" alt="fast-delivery" />
                 <p>Квалифицированные сотрудники</p>
               </div>
-              <p class="item__footer">
+              <p class="trustUs__benefits-item-footer">
                 Наша команда состоит из опытных экологов, готовых отвечать о
                 ходе работ в любое время
               </p>
             </div>
-            <div class="trustUs__benefits trustUs__benefits_item">
-              <div class="item__header">
+            <div class="trustUs__benefits-item">
+              <div class="trustUs__benefits-item-header">
                 <img src="assets/images/key.png" alt="fast-delivery" />
                 <p>Работы "под ключ"</p>
               </div>
-              <p class="item__footer">
+              <p class="trustUs__benefits-item-footer">
                 Вы минимизируете свое участие в процессе подготовки документов.
                 Мы все сделаем за Вас
               </p>
@@ -210,7 +217,6 @@
                     placeholder="Ваше имя*"
                     pattern="[A-Za-zА-Яа-яЁё]+"
                     title="Пожалуйста, введите только латинские или русские буквы"
-                    required
                   />
                 </div>
                 <div class="form__item">
@@ -221,9 +227,7 @@
                     name="phone"
                     class="form__input _req form__input_mainForm _phone"
                     placeholder="Телефон*"
-                    pattern="[0-9]{10,}"
-                    title="Введите минимум 10 цифр без пробелов и других символов"
-                    required
+                    title="Введите цифры без пробелов"
                   />
                 </div>
                 <div class="form__item">
@@ -302,10 +306,11 @@
     </main>
     <footer class="footer">
       <div class="container">
-        <div class="logo footer__logo">Херсон&nbsp<span>экология</span></div>
+        <div class="logo footer__logo">Херсон&nbsp;<span>экология</span></div>
         <p class="footer__email">herson.ecology@gmail.com</p>
         <p class="footer__address">
-          Адрес: Республика Крым, г.&nbsp;Симферополь, ул.&nbsp;Лермонтова, д.&nbsp;14
+          Адрес: Республика Крым, г.&nbsp;Симферополь, ул.&nbsp;Лермонтова,
+          д.&nbsp;14
         </p>
       </div>
     </footer>

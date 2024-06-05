@@ -1,114 +1,6 @@
-.modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 99998;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  overflow-y: auto;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.4s, visibility 0.4s;
-}
-
-.modal__box {
-  position: relative;
-  max-width: 414px;
-  padding: 45px;
-  z-index: 3;
-  background-color: #ECEEEB;
-  border-radius: 0.45rem;
-  margin: 30px 15px;
-  transform: scale(0);
-  transition: transform 0.8s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal__close-btn {
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  border: none;
-  background-color: transparent;
-  padding: 5px;
-  cursor: pointer;
-}
-
-.modal__close-btn svg path {
-  transition: fill 0.4s;
-  stroke-width: 1.5px;
-}
-
-.modal__close-btn:hover svg:hover path {
-  stroke: #8cac18;
-}
-
-.modal.open {
-  visibility: visible;
-  opacity: 1;
-}
-
-.modal.open .modal__box {
-  transform: scale(1);
-}
-
-.modal__title {
-  color: #343434;
-  font-size: 34px;
-  font-family: "Roboto 300", sans-serif;
-  padding-bottom: 20px;
-}
-
-.modal__input {
-  width: 294px;
-  height: 53px;
-  background-color: #FFFFFF;
-  color: #343434;
-  border: none;
-  border-radius: 5px;
-  padding-left: 20px;
-  font-size: 20px;
-  font-family: "Roboto 100", sans-serif;
-}
-.modal__input::-moz-placeholder {
-  color: #343434;
-  caret-color: #343434;
-  caret-shape: inherit;
-}
-.modal__input::placeholder {
-  color: #343434;
-  caret-color: #343434;
-  caret-shape: inherit;
-}
-.modal__input:focus {
-  outline: none;
-  border: none;
-  box-shadow: none;
-}
-
-.modal__button {
-  background-color: #9DC11A;
-  width: 315px;
-  border-radius: 5px;
-  padding: 23px;
-  text-transform: uppercase;
-  font-size: 20px;
-}
-.modal__button:hover {
-  background-color: #b3dc1e;
-}
-
 * {
   margin: 0;
   padding: 0;
-  outline: 1px solid black;
 }
 
 @font-face {
@@ -157,6 +49,136 @@ button {
   text-align: center;
 }
 
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99998;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
+.modal__box {
+  position: relative;
+  max-width: 414px;
+  padding: 45px;
+  z-index: 3;
+  background-color: #ECEEEB;
+  border-radius: 0.45rem;
+  margin: 30px 15px;
+  transform: scale(0);
+  transition: transform 0.8s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 500px) {
+  .modal__box {
+    max-width: 300px;
+    margin: 0;
+    padding: 10px;
+  }
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  border: none;
+  background-color: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.modal__close-btn svg path {
+  transition: fill 0.4s;
+  stroke-width: 1.5px;
+}
+
+.modal__close-btn:hover svg:hover path {
+  stroke: #8cac18;
+}
+
+.modal.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal.open .modal__box {
+  transform: scale(1);
+}
+
+.modal__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__title {
+  color: #343434;
+  font-size: clamp(25px, 3vw, 34px);
+  font-family: "Roboto 300", sans-serif;
+  padding-bottom: 20px;
+}
+
+.modal__input {
+  width: 294px;
+  height: 53px;
+  background-color: #FFFFFF;
+  color: #343434;
+  border: none;
+  border-radius: 5px;
+  padding-left: 20px;
+  font-size: 20px;
+  font-family: "Roboto 100", sans-serif;
+}
+@media (max-width: 500px) {
+  .modal__input {
+    width: 250px;
+  }
+}
+.modal__input::-moz-placeholder {
+  color: #343434;
+  caret-color: #343434;
+  caret-shape: inherit;
+}
+.modal__input::placeholder {
+  color: #343434;
+  caret-color: #343434;
+  caret-shape: inherit;
+}
+.modal__input:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.modal__button {
+  background-color: #9DC11A;
+  width: 315px;
+  border-radius: 5px;
+  padding: 23px;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.modal__button:hover {
+  background-color: #b3dc1e;
+}
+@media (max-width: 500px) {
+  .modal__button {
+    width: 250px;
+  }
+}
+
 .header .container {
   display: flex;
   align-items: flex-start;
@@ -194,25 +216,46 @@ button {
   font-size: clamp(14px, 2.5vw, 24px);
   margin-bottom: 5px;
 }
-.callRequest a {
+
+.callRequest__order {
   cursor: pointer;
   color: #44a047;
   font-size: 14px;
 }
-.callRequest a:hover {
+.callRequest__order:hover {
   color: #6dd771;
+}
+
+.callRequest__phoneLink {
+  text-decoration: none;
+  color: #343434;
+  cursor: auto;
 }
 
 .main-content .container {
   background-image: url(../images/main-image.jpg);
   background-size: cover;
-  max-height: 637px;
-  padding: 160px 0px 50px 0px;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center;
+  transition: background-position 0.5s;
+  padding: 200px 0px 50px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .main-content .container {
+    background-position: right;
+    padding: 150px 0px 50px 0;
+  }
+}
+@media (max-width: 400px) {
+  .main-content .container {
+    padding: 170px 10px 50px 10px;
+  }
 }
 
 .main-content_title {
@@ -247,8 +290,8 @@ button {
 }
 
 .workWithUs img {
-  max-width: 317px;
-  padding: 20px 20px 0 0;
+  max-width: 370px;
+  padding: 20px 10px 0 0;
 }
 @media (max-width: 640px) {
   .workWithUs img {
@@ -346,7 +389,7 @@ button {
   }
 }
 
-.trustUs__benefits_item {
+.trustUs__benefits-item {
   display: flex;
   flex-direction: column;
   padding: 0 5px 0 5px;
@@ -354,12 +397,12 @@ button {
   color: #0f303f;
 }
 
-.item__header {
+.trustUs__benefits-item-header {
   display: flex;
   margin-bottom: 10px;
   align-items: center;
 }
-.item__header p {
+.trustUs__benefits-item-header p {
   line-height: 1.16;
   font-size: clamp(20px, 3vw, 26px);
 }
@@ -374,7 +417,7 @@ button {
   font-size: 22px;
 }
 
-.item__footer {
+.trustUs__benefits-item-footer {
   line-height: 1.43;
   font-size: 18px;
 }
@@ -433,7 +476,14 @@ button {
 .modalForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 30px;
+}
+@media (max-width: 500px) {
+  .modalForm {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
 .form__body::after {
@@ -539,6 +589,7 @@ button {
   font-size: 55px;
   font-family: "Roboto 100", sans-serif;
   font-weight: 100;
+  margin-bottom: 15px;
 }
 
 .weAre img {
@@ -547,7 +598,6 @@ button {
 }
 
 .weAre__content {
-  outline: 2px solid pink;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -636,23 +686,8 @@ button {
 }
 
 .footer {
-  background-image: url(../images/grey-background.jpg);
-  background-size: cover;
-  position: relative;
   background-color: rgba(35, 46, 62, 0.85);
   color: #FFFFFF;
-  position: relative;
-}
-
-.footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(49, 54, 54, 0.5);
-  z-index: 1;
 }
 
 .footer .container {
@@ -671,14 +706,12 @@ button {
 
 .footer__logo {
   margin-right: 0;
-  z-index: 2;
 }
 .footer__logo span {
   border-radius: 0;
 }
 
 .footer__email {
-  z-index: 2;
   font-size: 18px;
 }
 
@@ -686,7 +719,6 @@ button {
   font-size: clamp(16px, 2vw, 20px);
   font-family: "Roboto 100", sans-serif;
   font-weight: 100;
-  z-index: 2;
 }
 @media (max-width: 940px) {
   .footer__address {

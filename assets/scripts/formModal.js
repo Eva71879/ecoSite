@@ -1,3 +1,5 @@
+//отправка формы из модального окна в header
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("formModal");
   form.addEventListener("submit", formSend);
@@ -32,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  //валидация формы из модального окна в header
+
   function formValidate(form) {
     let error = 0;
     let formReq = document.querySelectorAll("._reqModal");
@@ -63,6 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function phoneTest(input) {
-    return !/(?<=^|\s|>|\;|\:|\))[\d\-\(\) ]{8,}/.test(input.value);
+    return !/(?<=^|\s|>|\;|\:|\))[\d\-\(\) ]/.test(input.value);
   }
 });
