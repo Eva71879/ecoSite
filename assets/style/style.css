@@ -186,7 +186,7 @@ button {
   padding: 25px;
   font-family: "Roboto 300", sans-serif;
 }
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .header .container {
     flex-direction: column;
     justify-content: center;
@@ -194,10 +194,22 @@ button {
     gap: 10px;
   }
 }
+@media (max-width: 400px) {
+  .header .container {
+    margin-bottom: -50px;
+  }
+}
 
 .title {
   font-size: clamp(14px, 5vw, 18px);
   max-width: 350px;
+}
+@media (max-width: 400px) {
+  .title {
+    text-align: center;
+    gap: 15px;
+    outline: 1px solid #44a047;
+  }
 }
 
 .callRequest {
@@ -255,6 +267,7 @@ button {
 @media (max-width: 400px) {
   .main-content .container {
     padding: 170px 10px 50px 10px;
+    background-position: -600px 50px;
   }
 }
 
@@ -282,6 +295,7 @@ button {
 .workWithUs .container {
   display: flex;
   justify-content: space-between;
+  background-color: #f7fbf2;
 }
 @media (max-width: 640px) {
   .workWithUs .container {
@@ -422,13 +436,13 @@ button {
   font-size: 18px;
 }
 
-.request .container {
+.request {
   background-image: url(../images/underwater.jpg);
   background-size: cover;
   position: relative;
 }
 
-.request .container::before {
+.request::before {
   content: "";
   position: absolute;
   top: 0;
@@ -516,6 +530,12 @@ button {
   color: rgb(253, 83, 83);
   padding-top: 5px;
 }
+@media (max-width: 355px) {
+  #message, #messageModal {
+    font-size: 12px;
+    padding-top: 10px;
+  }
+}
 
 .form__input_mainForm, .form__button_mainForm {
   background-color: transparent;
@@ -542,6 +562,12 @@ button {
     max-width: 290px;
   }
 }
+@media (max-width: 355px) {
+  .form__input_mainForm {
+    max-width: 220px;
+    padding-left: 35px;
+  }
+}
 
 .form__input_mainForm::-moz-placeholder {
   color: white;
@@ -564,7 +590,7 @@ button {
 .form__button_mainForm {
   border: 2px solid #000000;
   color: #FFFFFF;
-  font-size: 20px;
+  font-size: clamp(14px, 2vw, 20px);
   text-transform: uppercase;
   max-width: 338px;
   height: 51px;
@@ -572,7 +598,12 @@ button {
   cursor: pointer;
 }
 .form__button_mainForm span {
-  font-size: 25px;
+  font-size: clamp(14px, 2vw, 25px);
+}
+@media (max-width: 355px) {
+  .form__button_mainForm {
+    max-width: 250px;
+  }
 }
 
 .form__button_mainForm:hover span {
@@ -595,6 +626,12 @@ button {
 .weAre img {
   max-width: 352px;
   max-height: 352px;
+}
+@media (max-width: 355px) {
+  .weAre img {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .weAre__content {
@@ -656,19 +693,19 @@ button {
 .questions h3 {
   text-align: center;
   color: #FFFFFF;
-  line-height: 53px;
+  line-height: clamp(30px, 5vw, 53px);
   font-family: "Roboto 100", sans-serif;
   font-weight: 100;
   z-index: 2;
 }
 
 .questions h2 {
-  font-size: 50px;
-  padding: 50px 0 20px 0;
+  font-size: clamp(30px, 3vw, 50px);
+  padding: clamp(20px, 5vw, 50px) 0 clamp(10px, 2.5vw, 20px) 0;
 }
 
 .questions h3 {
-  font-size: 30px;
+  font-size: clamp(18px, 3vw, 30px);
   padding-bottom: clamp(30px, 4vw, 50px);
 }
 
@@ -677,12 +714,17 @@ button {
   background-color: #f99a1d;
   max-width: 420px;
   border-radius: 12px;
-  font-size: 28px;
+  font-size: clamp(20px, 3vw, 28px);
   font-family: "Roboto 100", sans-serif;
   font-weight: 100;
-  line-height: 67px;
-  padding: 10px;
+  line-height: clamp(40px, 3vw, 67px);
+  padding: clamp(5px, 3vw, 10px);
   margin-bottom: 30px;
+}
+@media (max-width: 355px) {
+  .questions__button {
+    width: 80%;
+  }
 }
 
 .footer {
