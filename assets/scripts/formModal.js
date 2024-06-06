@@ -67,6 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function phoneTest(input) {
-    return !/(?<=^|\s|>|\;|\:|\))[\d\-\(\) ]/.test(input.value);
+    return !/^[\d\-\(\) ]+$/.test(input.value);
   }
 });

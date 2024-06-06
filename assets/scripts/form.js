@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("form");
-  form.addEventListener("submit", formSend);
+  const submitBtn = document.getElementById("submitBtn");
+
+  submitBtn.addEventListener("click", formSend);
 
   async function formSend(e) {
     e.preventDefault();
@@ -12,17 +14,27 @@ document.addEventListener("DOMContentLoaded", function () {
     if (error === 0) {
       form.classList.add("_sending");
 
-      let response = await fetch("sendmail.php", {
-        method: "POST",
-        body: formData,
-      });
-      if (response.ok) {
-        let result = await response.json();
-        alert(result.message);
-        form.reset();
-        form.classList.remove("_sending");
-      } else {
+      try {
+        let response = await fetch("sendmail.php", {
+          method: "POST",
+          body: formData,
+        });
+
+        console.log("Response received");
+
+        if (response.ok) {
+          let result = await response.json();
+          console.log("Result:", result);
+          alert(result.message);
+          form.reset();
+        } else {
+          document.getElementById("message").innerHTML +=
+            "Ошибка отправки.<br>";
+        }
+      } catch (error) {
+        console.error("Fetch error:", error);
         document.getElementById("message").innerHTML += "Ошибка отправки.<br>";
+      } finally {
         form.classList.remove("_sending");
       }
     } else {
@@ -73,6 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function phoneTest(input) {
-    return !/(?<=^|\s|>|\;|\:|\))[\d\-\(\) ]/.test(input.value);
+    return !/^[\d\-\(\) ]+$/.test(input.value);
   }
 });
